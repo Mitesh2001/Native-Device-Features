@@ -3,15 +3,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import AllPlaces from './screens/AllPlaces';
 import AddPlace from './screens/AddPlace';
-import IconButton from './components/places/UI/IconButton';
 import { Colors } from './constants/colors';
+import IconButton from './components/UI/IconButton';
+import { Fragment } from 'react';
+import Map from './screens/Map';
 
 export default function App() {
 
   const Stack = createNativeStackNavigator();
 
   return (
-    <>
+    <Fragment>
       <StatusBar style='auto' />
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
@@ -37,8 +39,15 @@ export default function App() {
               title: "Add new place"
             }}
           />
+          <Stack.Screen
+            name='map'
+            component={Map}
+            options={{
+              title: "Map"
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </Fragment>
   );
 }

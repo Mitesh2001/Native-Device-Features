@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text } from 'react-native'
 import React, { ComponentProps, FC, PropsWithChildren } from 'react'
-import { Colors } from '../../../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
+import { Colors } from '../../constants/colors';
 
 interface OutlineButtonProps extends PropsWithChildren {
     icon: ComponentProps<typeof Ionicons>['name'];

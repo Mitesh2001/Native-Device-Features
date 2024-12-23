@@ -2,7 +2,7 @@ import { Alert, Button, Image, Pressable, StyleSheet, Text, View } from 'react-n
 import React, { useState } from 'react';
 import { ImagePickerAsset, launchCameraAsync, PermissionStatus, useCameraPermissions } from 'expo-image-picker';
 import { Colors } from '../../constants/colors';
-import OutlineButton from './UI/OutlineButton';
+import OutlineButton from '../UI/OutlineButton';
 
 const ImagePicker = () => {
 
@@ -26,13 +26,10 @@ const ImagePicker = () => {
     }
 
     const pickImage = async () => {
-
         const hadPermission = await verifyPermission();
-
         if (!hadPermission) {
             return;
         }
-
         const result = await launchCameraAsync({
             allowsEditing: true,
             aspect: [16, 9],
